@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/homebg">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="14dp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="56dp">
+            <ImageButton android:id="@+id/backBtn" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/backbuttonmain" android:contentDescription="Back"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="ONLINE" android:textColor="#FFFFFF" android:textSize="28sp" android:textStyle="bold" android:fontFamily="@font/rcbold"/>
+        </FrameLayout>
+
+        <ImageView android:layout_width="match_parent" android:layout_height="46dp" android:scaleType="fitCenter" android:src="@drawable/onlinemultiplayerbg"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:paddingTop="12dp">
+            <Button android:id="@+id/tabCreate" android:layout_width="0dp" android:layout_height="54dp" android:layout_weight="1" android:text="Create" android:textSize="19sp" android:textStyle="bold"/>
+            <Button android:id="@+id/tabJoin" android:layout_width="0dp" android:layout_height="54dp" android:layout_weight="1" android:text="Join" android:textSize="19sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="10dp">
+
+                <LinearLayout android:id="@+id/createPanel" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:padding="18dp" android:background="#CC063C82">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SELECT PLAYERS" android:textColor="#FFD21C" android:textSize="28sp" android:textStyle="bold" android:fontFamily="@font/rcbold"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="100dp" android:gravity="center" android:orientation="horizontal">
+                        <Button android:id="@+id/p2" android:layout_width="85dp" android:layout_height="75dp" android:text="2P"/>
+                        <Button android:id="@+id/p3" android:layout_width="85dp" android:layout_height="75dp" android:text="3P"/>
+                        <Button android:id="@+id/p4" android:layout_width="85dp" android:layout_height="75dp" android:text="4P"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ENTRY" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold"/>
+                    <TextView android:layout_width="160dp" android:layout_height="65dp" android:gravity="center" android:text="100" android:textColor="#FFFFFF" android:textSize="30sp" android:textStyle="bold" android:background="#FFB900"/>
+                    <EditText android:id="@+id/nameInput" android:layout_width="match_parent" android:layout_height="56dp" android:hint="Your name" android:textColor="#FFFFFF" android:textColorHint="#DDDDDD" android:inputType="textPersonName"/>
+                    <Button android:id="@+id/createRoom" android:layout_width="220dp" android:layout_height="60dp" android:text="CREATE ROOM" android:textSize="20sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/joinPanel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:padding="22dp" android:background="#CC063C82">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ENTER PRIVATE CODE" android:textColor="#FFD21C" android:textSize="28sp" android:textStyle="bold" android:fontFamily="@font/rcbold"/>
+                    <EditText android:id="@+id/roomInput" android:layout_width="match_parent" android:layout_height="68dp" android:layout_marginTop="24dp" android:hint="Enter 8-digit code" android:gravity="center" android:textSize="20sp" android:inputType="number" android:maxLength="8"/>
+                    <EditText android:id="@+id/joinNameHidden" android:layout_width="1dp" android:layout_height="1dp" android:visibility="gone"/>
+                    <Button android:id="@+id/joinRoom" android:layout_width="230dp" android:layout_height="62dp" android:layout_marginTop="24dp" android:text="JOIN ROOM" android:textSize="20sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Connecting..." android:textColor="#FFFFFF" android:textSize="16sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/configPanel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:padding="18dp" android:background="#CC063C82">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SELECT TOKEN / COLOR" android:textColor="#FFD21C" android:textSize="26sp" android:textStyle="bold" android:fontFamily="@font/rcbold"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="82dp" android:gravity="center" android:orientation="horizontal">
+                        <Button android:id="@+id/red" android:layout_width="80dp" android:layout_height="65dp" android:text="RED"/>
+                        <Button android:id="@+id/green" android:layout_width="80dp" android:layout_height="65dp" android:text="GREEN"/>
+                        <Button android:id="@+id/yellow" android:layout_width="80dp" android:layout_height="65dp" android:text="YELLOW"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SELECT GAME" android:textColor="#FFD21C" android:textSize="26sp" android:textStyle="bold" android:fontFamily="@font/rcbold"/>
+                    <Button android:id="@+id/classic" android:layout_width="270dp" android:layout_height="58dp" android:text="CLASSIC" android:textSize="19sp" android:textStyle="bold"/>
+                    <Button android:id="@+id/quick" android:layout_width="270dp" android:layout_height="58dp" android:text="QUICK" android:textSize="19sp" android:textStyle="bold"/>
+                    <Button android:id="@+id/popular" android:layout_width="270dp" android:layout_height="58dp" android:text="POPULAR" android:textSize="19sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/gameStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CLASSIC selected" android:textColor="#FFFFFF" android:textSize="16sp"/>
+                    <Button android:id="@+id/nextBtn" android:layout_width="220dp" android:layout_height="60dp" android:layout_marginTop="10dp" android:text="NEXT" android:textSize="20sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/waitingPanel" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:padding="24dp" android:background="#CC063C82">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PRIVATE ROOM" android:textColor="#FFD21C" android:textSize="28sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/roomCode" android:layout_width="260dp" android:layout_height="80dp" android:gravity="center" android:text="----" android:textColor="#FFFFFF" android:textSize="34sp" android:textStyle="bold" android:background="#FFB900"/>
+                    <TextView android:id="@+id/playerCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Players: 0/4" android:textColor="#FFFFFF" android:textSize="22sp"/>
+                    <Button android:id="@+id/startBtn" android:layout_width="220dp" android:layout_height="62dp" android:layout_marginTop="20dp" android:enabled="false" android:text="START GAME" android:textSize="20sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/statusWait" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Waiting for players..." android:textColor="#FFFFFF" android:textSize="16sp"/>
+                </LinearLayout>
+            </FrameLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>
